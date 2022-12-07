@@ -54,7 +54,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy App Service'
             inputs:
-              azureSubscription: 'Azure for Students'
+              azureSubscription: 'Azure for Students (c002ead6-edd9-4b70-94cb-9e8e65b23d6e)'
               appType: 'webApp'
               appName: 'frontend-angular-prod'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
