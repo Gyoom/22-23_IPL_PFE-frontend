@@ -46,3 +46,17 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     environment: Development
+
+- stage: Production
+  dependsOn: [ Development ]
+  displayName: 'Deploy to Production'
+  jobs:
+    - deployment: DeployProduction
+      pool:
+        vmImage: 'ubuntu-latest'
+      environment: Production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - script: echo Deploying to Production
