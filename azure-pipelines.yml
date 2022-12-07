@@ -46,6 +46,19 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     environment: Development
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+
+          - task: AzureWebApp@1
+            displayName: 'Deploy App Service'
+            inputs:
+              azureSubscription: 'c002ead6-edd9-4b70-94cb-9e8e65b23d6e'
+              appType: 'webApp'
+              appName: 'frontend-angular-prod'
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              runtimeStack: 'NODE|16-lts'
 
 - stage: Production
   dependsOn: [ Development ]
