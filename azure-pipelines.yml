@@ -52,7 +52,7 @@ stages:
           steps:
 
           - task: AzureWebApp@1
-            displayName: 'Deploy App Service'
+            displayName: 'Deploy App Service to dev'
             inputs:
               azureSubscription: 'Azure for Students (c002ead6-edd9-4b70-94cb-9e8e65b23d6e)'
               appType: 'webApp'
@@ -72,4 +72,11 @@ stages:
         runOnce:
           deploy:
             steps:
-            - script: echo Deploying to Production
+            - task: AzureWebApp@1
+              displayName: 'Deploy App Service to prod'
+              inputs:
+                azureSubscription: 'Azure for Students (c002ead6-edd9-4b70-94cb-9e8e65b23d6e)'
+                appType: 'webApp'
+                appName: 'frontend-angular-prod'
+                package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+                runtimeStack: 'NODE|16-lts'
