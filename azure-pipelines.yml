@@ -23,14 +23,13 @@ stages:
         displayName: 'Install Node.js'
 
       - script: |
-          npm install -g @angular/cli
           npm install
           ng build
         displayName: 'npm install and build'
 
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(system.defaultWorkingDirectory)\dist\frontend-angular'
+          rootFolderOrFile: '$(system.defaultWorkingDirectory)/dist/frontend-angular'
           includeRootFolder: false
 
 
