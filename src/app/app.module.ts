@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
 
 @NgModule({ //pour enregistrer tout les composants utilises pour notre app
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UtilisateursComponent
   ],
   imports: [ //pour enregistrer tout les modules utilises par l'app
     BrowserModule,
