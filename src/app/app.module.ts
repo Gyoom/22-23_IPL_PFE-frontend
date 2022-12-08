@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
-@NgModule({
+@NgModule({ //pour enregistrer tout les composants utilises pour notre app
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent
   ],
-  imports: [
+  imports: [ //pour enregistrer tout les modules utilises par l'app
     BrowserModule,
     AppRoutingModule
   ],
