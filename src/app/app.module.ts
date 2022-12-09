@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
+import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 
 // Component Manager
 
@@ -12,7 +14,9 @@ import { RegisterComponent } from './components/register/register.component';
   declarations: [ // All Components
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UtilisateursComponent,
+    PageNoFoundComponent
   ],
   imports: [
     BrowserModule, // Browser link

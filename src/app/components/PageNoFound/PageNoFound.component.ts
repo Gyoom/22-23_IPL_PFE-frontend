@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-PageNoFound',
-  templateUrl: './PageNoFound.component.html',
-  styleUrls: ['./PageNoFound.component.css']
+  templateUrl: "<h1>Error 404</h1>",
+  styleUrls: []
 })
-export class PageNoFoundComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class PageNoFoundComponent {
 }
