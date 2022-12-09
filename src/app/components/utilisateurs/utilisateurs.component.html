@@ -2,6 +2,17 @@
 
 <div *ngFor="let utilisateurs of utilisateurs">
     <h3>
-        {{ utilisateurs.prenom }}
+        <a [title]="utilisateurs.prenom">
+            {{ utilisateurs.prenom }} {{ utilisateurs.nom }}
+        </a>
     </h3>
+
+    <p *ngIf="utilisateurs.prenom">
+        Pseudo: {{ utilisateurs.pseudo }}
+      </p>
+
+    <button type="button" (click)="ajouterAmi()">
+        ajouter ami
+    </button>
+    
 </div>
