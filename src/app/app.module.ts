@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//import { RouterModule } from '@angular/router'; // pas sur ?
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,10 @@ import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.compo
   ],
   imports: [
     BrowserModule, // Browser link
-    AppRoutingModule // Routee
+    AppRoutingModule, // Routee
+    /*RouterModule.forRoot([ //pas sur d'avoir besoin ?
+      { path: '', component: UtilisateursComponent },
+    ])*/
   ],
   providers: [],
   bootstrap: [AppComponent] // component who use app-root as selector
