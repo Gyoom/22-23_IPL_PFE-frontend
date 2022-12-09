@@ -1,0 +1,22 @@
+.container-main {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-main-left {
+    width: 30%;
+    text-align: center;
+}
+
+.container-main-central {
+    width: 40%;
+}
+
+.container-main-right {
+    width: 30%;
+    text-align: center;
+
+}
