@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
+// Component Manager
+
 @NgModule({
-  declarations: [
+  declarations: [ // All Components
     AppComponent,
     LoginComponent,
     RegisterComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule, // Browser link
+    AppRoutingModule // Routee
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // component who use app-root as selector
 })
 export class AppModule { }
