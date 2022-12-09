@@ -14,7 +14,6 @@ import { MainCentralEventsComponent } from './components/main-central-events/mai
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { utilisateurs } from './models/utilisateurs';
-import { ListeEvenementsComponent } from './components/liste-evenements/liste-evenements.component';
 
 // Component Manager
 
@@ -30,8 +29,7 @@ import { ListeEvenementsComponent } from './components/liste-evenements/liste-ev
     MainCentralHomeComponent,
     MainCentralEventsComponent,
     HomepageComponent,
-    ProfilUtilisateurComponent,
-    ListeEvenementsComponent
+    ProfilUtilisateurComponent
   ],
   imports: [
     BrowserModule, // Browser link
