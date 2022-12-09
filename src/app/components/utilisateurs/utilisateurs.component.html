@@ -2,8 +2,7 @@
 
 <div *ngFor="let utilisateurs of utilisateurs"> <!--affiche tout les users-->
     <h3>
-        <a [title]="utilisateurs.prenom"
-            [routerLink]="['/utilisateurs', utilisateurs.id]">
+        <a [title]="utilisateurs.prenom">
             {{ utilisateurs.prenom }} {{ utilisateurs.nom }}
         </a>
     </h3>
