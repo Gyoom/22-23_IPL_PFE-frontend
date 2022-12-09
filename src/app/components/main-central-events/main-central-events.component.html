@@ -1,3 +1,18 @@
-<p>
-  main-central-events works!
-</p>
+<h2>evenements</h2>
+
+<div *ngFor="let evenements of evenements"> <!-- affiche tout les events -->
+    <h3>
+        <a [title]="evenements.nom">
+            {{ evenements.nom }}
+        </a>
+    </h3>
+
+    <p *ngIf="evenements.type"> cree la balise p avec le contenu si l'utilisateur a un prenom
+        type: {{ evenements.type }}
+      </p>
+
+    <!-- <button type="button" (click)="ajouterAmi()">
+        ajouter ami
+    </button> --> 
+    
+</div>

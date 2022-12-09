@@ -6,8 +6,7 @@ import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.co
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { MainComponent } from './components/main/main.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
-import { ListeEvenementsComponent } from './components/liste-evenements/liste-evenements.component';
+//import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 
 
 const routes: Routes = [
@@ -18,10 +17,10 @@ const routes: Routes = [
   {path:'main/home', component: MainComponent},
   {path:'main/events', component: MainComponent},
   {path:'utilisateurs', component: UtilisateursComponent},
-  {path: '**', component: PageNoFoundComponent },
   {path: 'homepage', component: HomepageComponent}, //ajout pathmatch ? changer default path ?
   //{path: 'utilisateur/:id', component: ProfilUtilisateurComponent},
-  {path: 'liste-evenements', component: ListeEvenementsComponent}
+  
+  {path: '**', component: PageNoFoundComponent }, // default path, doit etre en dernier !
 ]
 
 @NgModule({
