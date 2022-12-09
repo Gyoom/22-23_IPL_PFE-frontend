@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'utilisateurs', component: UtilisateursComponent},
   { path: '**', component: PageNoFoundComponent },
   {path: 'homepage', component: HomepageComponent}, //ajout pathmatch ? changer default path ?
-  {path: 'profil-utilisateur', component: ProfilUtilisateurComponent}
+  {path: 'utilisateur/:id', component: ProfilUtilisateurComponent}
 ]
 
 @NgModule({

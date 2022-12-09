@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { RouterModule } from '@angular/router'; // pas sur ?
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -10,6 +9,7 @@ import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.co
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
+import { utilisateurs } from './models/utilisateurs';
 
 // Component Manager
 
@@ -26,9 +26,10 @@ import { ProfilUtilisateurComponent } from './components/profil-utilisateur/prof
   imports: [
     BrowserModule, // Browser link
     AppRoutingModule, // Routee
-    /*RouterModule.forRoot([ //pas sur d'avoir besoin ?
+    RouterModule.forRoot([ 
       { path: '', component: UtilisateursComponent },
-    ])*/
+      {path: 'utilisateurs/:utilisateurId', component: ProfilUtilisateurComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent] // component who use app-root as selector
