@@ -5,8 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { MainComponent } from './components/main/main.component';
-import { MainCentralHomeComponent } from './components/main-central-home/main-central-home.component';
-import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 
 
 const routes: Routes = [
@@ -18,6 +18,8 @@ const routes: Routes = [
   {path:'main/events', component: MainComponent},
   {path:'utilisateurs', component: UtilisateursComponent},
   {path: '**', component: PageNoFoundComponent },
+  {path: 'homepage', component: HomepageComponent}, //ajout pathmatch ? changer default path ?
+  {path: 'profil-utilisateur', component: ProfilUtilisateurComponent}
 ]
 
 @NgModule({
