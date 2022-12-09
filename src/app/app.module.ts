@@ -9,6 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 
 // Component Manager
 
@@ -19,7 +20,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     RegisterComponent,
     UtilisateursComponent,
     PageNoFoundComponent,
-    HomepageComponent
+    HomepageComponent,
+    ProfilUtilisateurComponent
   ],
   imports: [
     BrowserModule, // Browser link
