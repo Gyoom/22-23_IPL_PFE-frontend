@@ -14,7 +14,6 @@ import { MainComponent } from './components/main/main.component';
 import { MainCentralColumnComponent } from './components/main-central-column/main-central-column.component';
 import { MainCentralHomeComponent } from './components/main-central-home/main-central-home.component';
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 
 // Component Manager
@@ -30,7 +29,6 @@ import { ProfilUtilisateurComponent } from './components/profil-utilisateur/prof
     MainCentralColumnComponent,
     MainCentralHomeComponent,
     MainCentralEventsComponent,
-    HomepageComponent,
     ProfilUtilisateurComponent
   ],
   imports: [

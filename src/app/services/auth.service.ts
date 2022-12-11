@@ -23,18 +23,16 @@ getUsers(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:4000/");
 }
 
+// ok
 login(username: string, password: string): Observable<any> {
 
     return this.http.post(this.loginUrl, {
         username,
         password
       }, this.httpOptions);
-    /*.pipe(
-      tap((token : Token) => this.log(`login user`)),
-      catchError(this.handleError<Token>('login'))
-    );*/
   }
 
+  // ok
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(this.registerUrl, {
       username,
