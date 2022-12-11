@@ -10,24 +10,29 @@
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
                 <form>
                   <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX">Email</label>
+                    <input type="text" id="typeUsernameX" #username class="form-control form-control-lg" />
+                    <label class="form-label" for="typeUsernameX">Username</label>
                   </div>
 
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                    <input type="password" #password id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Password</label>
                   </div>
 
                   <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  <button class="btn btn-outline-light btn-lg px-5" (click)="login(username.value, password.value)">Login</button>
                 </form>
               </div>
 
               <div>
                 <p class="mb-0">Don't have an account ?</p>
                 <a routerLink="/register" lass="text-white-50 fw-bold" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a>
+              </div>
+              <div>
+                <p> is Logged : {{ isLoggedIn }}</p>
+                <p> isLoginFailed : {{  isLoginFailed }}</p>
+                <p> error : {{ errorMessage }}</p>
               </div>
             </div>
           </div>

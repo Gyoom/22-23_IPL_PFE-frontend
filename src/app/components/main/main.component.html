@@ -1,13 +1,23 @@
-
-  <div class="container-main">
-    <div class="container-main-left">
-      <app-utilisateurs></app-utilisateurs>
-    </div>
-    <div class="container-main-central">
-      <app-main-central-column></app-main-central-column>
-    </div>
-    <div class="container-main-right">
-      <h1>Colonne de droite</h1>
-    </div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+      <form class="d-flex" role="search">
+        <h3 class="me-2">Pseudo</h3>
+        <button class="btn btn-outline-success" type="submit" (click)="logOut()">Log Out</button>
+      </form>
   </div>
+</nav>
+
+
+<div class="container-main">
+  <div class="container-main-left">
+    <app-utilisateurs></app-utilisateurs>
+  </div>
+  <div class="container-main-central">
+    <app-main-central-column></app-main-central-column>
+  </div>
+  <div class="container-main-right">
+    <h1>Colonne de droite</h1>
+  </div>
+</div>
 

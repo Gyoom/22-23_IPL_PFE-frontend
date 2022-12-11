@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 // components imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +16,6 @@ import { MainCentralHomeComponent } from './components/main-central-home/main-ce
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
-import { utilisateurs } from './models/utilisateurs';
 
 // Component Manager
 
@@ -34,6 +36,8 @@ import { utilisateurs } from './models/utilisateurs';
   imports: [
     BrowserModule, // Browser link
     AppRoutingModule, // Router
+    HttpClientModule, // http request
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent] // component who use app-root as selector
