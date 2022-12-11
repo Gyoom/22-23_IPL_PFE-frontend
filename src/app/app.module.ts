@@ -32,7 +32,7 @@ import { ProfilUtilisateurComponent } from './components/profil-utilisateur/prof
   ],
   imports: [
     BrowserModule, // Browser link
-    AppRoutingModule, // Routee
+    AppRoutingModule, // Router
   ],
   providers: [],
   bootstrap: [AppComponent] // component who use app-root as selector
