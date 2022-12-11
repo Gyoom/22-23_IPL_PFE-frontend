@@ -13,6 +13,7 @@ import { MainCentralHomeComponent } from './components/main-central-home/main-ce
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
+import { utilisateurs } from './models/utilisateurs';
 
 // Component Manager
 
