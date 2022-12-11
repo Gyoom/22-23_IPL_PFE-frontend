@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    console.log("reload");
     window.location.reload();
   }
 }

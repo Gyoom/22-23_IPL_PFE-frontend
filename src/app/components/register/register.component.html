@@ -10,32 +10,39 @@
                 <p class="text-white-50 mb-5">please fill in your information!</p>
                 <form>
                     <div class="form-outline form-white mb-4">
-                        <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                        <input type="email" id="typeEmailX"  #email class="form-control form-control-lg" />
                         <label class="form-label" for="typeEmailX">Email</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                        <input type="text" id="typeTextX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeTextX">Email</label>
+                        <input type="text" id="typeTextX"  #username class="form-control form-control-lg" />
+                        <label class="form-label" for="typeTextX">Username</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                        <input type="password" id="typePassword1" class="form-control form-control-lg" />
+                        <input type="password" id="typePassword1"  #password class="form-control form-control-lg" />
                         <label class="form-label" for="typePassword1">Password</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                        <input type="password" id="typePassword2" class="form-control form-control-lg" />
+                        <input type="password" id="typePassword2"  #passwordConfirm class="form-control form-control-lg" />
                         <label class="form-label" for="typePassword2">Confirm password</label>
                     </div>
 
-                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
+                    <button class="btn btn-outline-light btn-lg px-5" (click)="register(username.value, password.value, passwordConfirm.value, email.value)">Register</button>
                 </form>
               </div>
 
               <div>
                 <p class="mb-0">you already have an account?</p>
                 <a routerLink="/login" lass="text-white-50 fw-bold" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+              </div>
+
+              <div>
+                <p> is Logged : {{ isLoggedIn }}</p>
+                <p> isRegisterFailed : {{ isRegisterFailed }}</p>
+                <p> isLoginFailed : {{  isLoginFailed }}</p>
+                <p> error : {{ errorMessage }}</p>
               </div>
 
             </div>

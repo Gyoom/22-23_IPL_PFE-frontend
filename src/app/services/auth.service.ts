@@ -33,7 +33,7 @@ login(username: string, password: string): Observable<any> {
   }
 
   // ok
-  register(username: string, email: string, password: string): Observable<any> {
+  register(username: string, password: string, email: string,): Observable<any> {
     return this.http.post(this.registerUrl, {
       username,
       email,
