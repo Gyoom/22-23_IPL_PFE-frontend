@@ -11,8 +11,8 @@ export class AuthService {
 
 constructor(private http: HttpClient) { }
 
-private loginUrl = 'http://localhost:4000/auth/login';
-private registerUrl = 'http://localhost:4000/auth/register';
+private loginUrl = 'https://backend-nestjs-dev.azurewebsites.net/auth/login';
+private registerUrl = 'https://backend-nestjs-dev.azurewebsites.net/auth/register';
 
 httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
