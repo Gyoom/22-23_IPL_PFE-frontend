@@ -6,4 +6,6 @@
       <p>Date de fin : {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
       <p>description : {{ event["_fields"][0]["properties"]["description"] }}</p>
   </div>
+  <button (click)="createEvent()">create</button>
+  <p>{{ error }}</p>
 </section>
