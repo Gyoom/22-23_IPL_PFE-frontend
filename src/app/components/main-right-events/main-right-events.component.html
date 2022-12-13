@@ -2,12 +2,10 @@
   <h2>Events en cours</h2>
   <div class="borderCSS m-1" *ngFor="let event of events">
       <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
-      <p>Date de début : {{ this.events[1]["_fields"][0]["properties"]["starting_date"] }}</p>
-      <p>Date de fin {{ this.events[1]["_fields"][0]["properties"]["ending_date"] }}</p>
-      <p>description : {{ this.events[1]["_fields"][0]["properties"]["description"] }}</p>
+      <p>Date de début : {{ event["_fields"][0]["properties"]["starting_date"] }}</p>
+      <p>Date de fin : {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+      <p>description : {{ event["_fields"][0]["properties"]["description"] }}</p>
   </div>
-  <p>Events : {{ events }}</p>
-  <p>Error : {{ error }}</p>
-
-<!-- {{ event._fields.properties.name }} -->
+  <button (click)="createEvent()">create</button>
+  <p>{{ error }}</p>
 </section>

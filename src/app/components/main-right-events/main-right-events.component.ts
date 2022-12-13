@@ -25,4 +25,15 @@ export class MainRightEventsComponent implements OnInit {
     );
   }
 
+  createEvent() {
+    this.eventService.createOne('name: string', new Date(), new Date(), 'description: string', 'username: string').subscribe(
+      data => {
+        this.error = 'ok';
+      },
+      err => {
+        this.error = err.error.message;
+      }
+    );
+  }
+
 }

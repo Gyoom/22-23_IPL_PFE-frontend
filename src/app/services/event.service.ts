@@ -13,24 +13,25 @@ constructor(private http: HttpClient) { }
 
 private backUrl = 'http://localhost:4000'
 private getAllUrl = '/events/';
-private createOneUrl = '/auth/register';
+private createOneUrl = '/events/create';
 
 httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
-
+// ok
 getAll(): Observable<any> {
 
   return this.http.get(this.backUrl + this.getAllUrl);
   }
 
-  // ok
-createOne(username: string, password: string, email: string,): Observable<any> {
+
+createOne(name: string, starting_date: Date, ending_date: Date, description: string, username: string): Observable<any> {
     return this.http.post(this.backUrl + this.createOneUrl, {
-      username,
-      email,
-      password
+      name,
+      starting_date,
+      ending_date,
+      description,
+      username
     }, this.httpOptions);
   }
 
