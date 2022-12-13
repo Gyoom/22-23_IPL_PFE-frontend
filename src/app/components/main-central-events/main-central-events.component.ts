@@ -9,7 +9,7 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./main-central-events.component.css']
 })
 export class MainCentralEventsComponent implements OnInit {
-  evenements = evenements;
+  //evenements = evenements;
 
   /*ajouterAmi() {
     window.alert('vous avez ajouté cette personne en ami !');

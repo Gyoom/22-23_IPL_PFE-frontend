@@ -1,21 +1,22 @@
 <h2>Evenements</h2> <br>
 
-<div *ngFor="let evenements of evenements"> <!-- affiche tout les events -->
+<div *ngFor="let event of events"> <!-- affiche tout les events -->
 
     <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><a [title]="evenements.nom" href="http://localhost:4200/main"> <!-- TODO changer en route vers l'event selectionné -->
-        {{ evenements.nom }}
+    <mat-card-title><a href="http://localhost:4200/main"> <!-- TODO changer en route vers l'event selectionné -->
+        <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
     </a></mat-card-title>
-    <mat-card-subtitle><p *ngIf="evenements.type"> <!--cree la balise p avec le contenu si l'event a un type -->
-        type: {{ evenements.type }}
+    <mat-card-subtitle><p> <!--*ngIf="events.type"--> <!--cree la balise p avec le contenu si l'event a un type -->
+        type: <!--{{ events.type }} --> TODO ajouter type event
       </p></mat-card-subtitle>
   </mat-card-header>
+
   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> <!-- TODO changer photo de l'event, et le alt -->
   <mat-card-content>
     <p>
-      Description de l'event, blablabla
+        Description : {{ this.events[1]["_fields"][0]["properties"]["description"] }}
     </p>
   </mat-card-content>
   <mat-card-actions>
