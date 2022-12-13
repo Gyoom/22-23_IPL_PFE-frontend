@@ -21,6 +21,7 @@ import { ProfilUtilisateurComponent } from './components/profil-utilisateur/prof
 import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
 import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';
 import { MainCentralMessagesComponent } from './components/main-central-messages/main-central-messages.component';
+import { MainCentralCreerEventComponent } from './components/main-central-creer-event/main-central-creer-event.component';
 
 
 // Component Manager
@@ -38,7 +39,8 @@ import { MainCentralMessagesComponent } from './components/main-central-messages
     ProfilUtilisateurComponent,
     MainRightEventsComponent,
     MainCentralFriendsComponent,
-    MainCentralMessagesComponent
+    MainCentralMessagesComponent,
+    MainCentralCreerEventComponent,
   ],
   imports: [
     BrowserModule, // Browser link

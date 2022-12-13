@@ -18,6 +18,10 @@
         <a  *ngIf="actualComposant == 'messages'; else elseMessages" class="nav-link active" (click)="change('messages')">Messages</a>
         <ng-template #elseMessages> <a class="nav-link" (click)="change('messages')">Messages</a></ng-template>
       </li>
+      <li class="nav-item">
+        <a  *ngIf="actualComposant == 'creer-event'; else elseCreerEvent" class="nav-link active" (click)="change('creer-event')">Creer un Evenement</a>
+        <ng-template #elseCreerEvent> <a class="nav-link" (click)="change('creer-event')">Creer un Evenement</a></ng-template>
+      </li>
     </ul>
   </div>
   <div class="card-body">
@@ -25,6 +29,7 @@
     <app-main-central-friends *ngIf="actualComposant == 'friends'"></app-main-central-friends>
     <app-main-central-events *ngIf="actualComposant == 'events'"></app-main-central-events>
     <app-main-central-messages *ngIf="actualComposant == 'messages'"></app-main-central-messages>
+    <app-main-central-creer-event *ngIf="actualComposant == 'creer-event'"></app-main-central-creer-event>
   </div>
 </div>
 
