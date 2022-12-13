@@ -6,15 +6,16 @@ import { FormsModule } from '@angular/forms';
 // components imports
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
+import { LoginComponent } from './components/auth-login/auth-login.component';
+import { RegisterComponent } from './components/auth-register/auth-register.component';
+import { UtilisateursComponent } from './components/main-left-allusers/main-left-allusers.component';
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { MainComponent } from './components/main/main.component';
 import { MainCentralColumnComponent } from './components/main-central-column/main-central-column.component';
 import { MainCentralHomeComponent } from './components/main-central-home/main-central-home.component';
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
+import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
 
 // Component Manager
 
@@ -29,7 +30,8 @@ import { ProfilUtilisateurComponent } from './components/profil-utilisateur/prof
     MainCentralColumnComponent,
     MainCentralHomeComponent,
     MainCentralEventsComponent,
-    ProfilUtilisateurComponent
+    ProfilUtilisateurComponent,
+    MainRightEventsComponent
   ],
   imports: [
     BrowserModule, // Browser link

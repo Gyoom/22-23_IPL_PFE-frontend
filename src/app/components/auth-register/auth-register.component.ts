@@ -4,9 +4,9 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-auth-register',
+  templateUrl: './auth-register.component.html',
+  styleUrls: ['./auth-register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
         //this.tokenStorage.saveToken(data.accessToken);
         //this.tokenStorage.saveUser(data);
 
-        this.router.navigate(['/main']);
+        this.router.navigate(['/login']);
       },
       err => {
         this.errorMessage += err.error.message;

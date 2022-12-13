@@ -6,9 +6,9 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-auth-login',
+  templateUrl: './auth-login.component.html',
+  styleUrls: ['./auth-login.component.css']
 })
 export class LoginComponent implements OnInit {
 

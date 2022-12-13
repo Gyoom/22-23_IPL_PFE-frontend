@@ -11,13 +11,15 @@ export class AuthService {
 
 constructor(private http: HttpClient) { }
 
-private loginUrl = 'https://backend-nestjs-dev.azurewebsites.net/auth/login';
-private registerUrl = 'https://backend-nestjs-dev.azurewebsites.net/auth/register';
+private backUrl = 'http://localhost:4000'
+private loginUrl = '/auth/login';
+private registerUrl = '/auth/register';
 
 httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+// Access-Control-Request-Headers
 // KO --> Back
 getUsers(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:4000/");
@@ -26,7 +28,7 @@ getUsers(): Observable<User[]> {
 // ok
 login(username: string, password: string): Observable<any> {
 
-    return this.http.post(this.loginUrl, {
+    return this.http.post(this.backUrl + this.loginUrl, {
         username,
         password
       }, this.httpOptions);
@@ -34,7 +36,7 @@ login(username: string, password: string): Observable<any> {
 
   // ok
   register(username: string, password: string, email: string,): Observable<any> {
-    return this.http.post(this.registerUrl, {
+    return this.http.post(this.backUrl + this.registerUrl, {
       username,
       email,
       password

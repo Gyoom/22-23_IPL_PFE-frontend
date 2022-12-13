@@ -1,0 +1,17 @@
+
+
+<section class="borderCSS m-1">
+    <h2>Utilisateurs</h2>
+    <div class="borderCSS m-1" *ngFor="let utilisateurs of utilisateurs"> <!--affiche tout les users-->
+        <h5>{{ utilisateurs.pseudo }}</h5>
+        <button class="borderCSS m-1" type="button" (click)="ajouterAmi()">
+            ajouter ami
+        </button>
+    </div>
+
+</section>
+
+
+<!-- <div ng-init="newLink = 'http://educative.io'"> // a tester pour dynamic link angular
+    <p>Visit <a ng-href="{newLink}}">Educative's dynamic link</a></p>
+  </div> -->
