@@ -1,18 +1,29 @@
 <h2>evenements</h2> <br>
 
 <div *ngFor="let evenements of evenements"> <!-- affiche tout les events -->
-    <h3>
-        <a [title]="evenements.nom">
-            {{ evenements.nom }}
-        </a>
-    </h3>
 
-    <p *ngIf="evenements.type"> <!--cree la balise p avec le contenu si l'event a un type -->
+    <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><a [title]="evenements.nom" href="http://localhost:4200/main"> <!-- TODO changer en route vers l'event selectionné -->
+        {{ evenements.nom }}
+    </a></mat-card-title>
+    <mat-card-subtitle><p *ngIf="evenements.type"> <!--cree la balise p avec le contenu si l'event a un type -->
         type: {{ evenements.type }}
-      </p>
+      </p></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> <!-- TODO changer photo de l'event, et le alt -->
+  <mat-card-content>
+    <p>
+      Description de l'event, blablabla
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
 
-    <!-- <button type="button" (click)="ajouterAmi()">
-        ajouter ami
-    </button> --> 
-    <br>
+<br><br>
+
 </div>

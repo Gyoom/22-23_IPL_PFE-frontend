@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 // components imports
 import { AppRoutingModule } from './app-routing.module';
@@ -17,8 +20,8 @@ import { MainCentralEventsComponent } from './components/main-central-events/mai
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
 
-// Component Manager
 
+// Component Manager
 @NgModule({
   declarations: [ // All Components
     AppComponent,
@@ -37,7 +40,10 @@ import { MainRightEventsComponent } from './components/main-right-events/main-ri
     BrowserModule, // Browser link
     AppRoutingModule, // Router
     HttpClientModule, // http request
-    FormsModule,
+    FormsModule, 
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent] // component who use app-root as selector
