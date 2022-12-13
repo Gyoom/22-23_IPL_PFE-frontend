@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-main-right-events',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainRightEventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private eventService : EventService
+  ) { }
 
+  public events = [];
+  public error = '';
   ngOnInit() {
+    this.eventService.getAll().subscribe(
+      data => {
+        this.events = data;
+      },
+      err => {
+        this.error = err.error.message;
+      }
+    );
   }
 
 }
