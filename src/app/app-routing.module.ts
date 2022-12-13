@@ -11,9 +11,7 @@ const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch: 'full'},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path:'main', redirectTo:'main/home', pathMatch: 'full'},
-  {path:'main/home', component: MainComponent},
-  {path:'main/events', component: MainComponent},
+  {path:'main', component: MainComponent},
   //{path: 'utilisateur/:id', component: ProfilUtilisateurComponent},
 
   {path: '**', component: PageNoFoundComponent }, // default path, doit etre en dernier !

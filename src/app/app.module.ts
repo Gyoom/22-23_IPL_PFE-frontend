@@ -19,6 +19,8 @@ import { MainCentralHomeComponent } from './components/main-central-home/main-ce
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
+import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';
+import { MainCentralMessagesComponent } from './components/main-central-messages/main-central-messages.component';
 
 
 // Component Manager
@@ -34,13 +36,15 @@ import { MainRightEventsComponent } from './components/main-right-events/main-ri
     MainCentralHomeComponent,
     MainCentralEventsComponent,
     ProfilUtilisateurComponent,
-    MainRightEventsComponent
+    MainRightEventsComponent,
+    MainCentralFriendsComponent,
+    MainCentralMessagesComponent
   ],
   imports: [
     BrowserModule, // Browser link
     AppRoutingModule, // Router
     HttpClientModule, // http request
-    FormsModule, 
+    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,

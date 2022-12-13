@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-main-central-column',
@@ -8,10 +8,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MainCentralColumnComponent implements OnInit {
 
-  constructor(private router: Router) { }
-  public r = this.router.url
+  constructor() { }
+  public actualComposant = 'home';
 
   ngOnInit() {
+  }
+
+  change(newActualComposant : string) {
+    this.actualComposant = newActualComposant;
   }
 
 }

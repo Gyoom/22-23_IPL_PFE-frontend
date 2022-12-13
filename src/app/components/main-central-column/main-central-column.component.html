@@ -3,24 +3,28 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="/main/home">Home</a>
+        <a  *ngIf="actualComposant == 'home'; else elseHome" class="nav-link active" (click)="change('home')">Home</a>
+        <ng-template #elseHome> <a class="nav-link" (click)="change('home')">Home</a></ng-template>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/main/friends">Amis</a>
+        <a  *ngIf="actualComposant == 'friends'; else elseFriends" class="nav-link active" (click)="change('friends')">Amis</a>
+        <ng-template #elseFriends> <a class="nav-link" (click)="change('friends')">Amis</a></ng-template>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/main/events">Events</a>
+        <a  *ngIf="actualComposant == 'events'; else elseEvents" class="nav-link active"  (click)="change('events')">Events</a>
+        <ng-template #elseEvents> <a class="nav-link" (click)="change('events')">Events</a></ng-template>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/main/messages">Messages</a>
+        <a  *ngIf="actualComposant == 'messages'; else elseMessages" class="nav-link active" (click)="change('messages')">Messages</a>
+        <ng-template #elseMessages> <a class="nav-link" (click)="change('messages')">Messages</a></ng-template>
       </li>
     </ul>
   </div>
   <div class="card-body">
-    <app-main-central-home *ngIf="r == '/main/home'"></app-main-central-home>
-    <!-- <app-main-central-friends *ngIf="r == '/main/friends'"></app-main-central-friends> -->
-    <app-main-central-events *ngIf="r == '/main/events'"></app-main-central-events>
-   <!-- <app-main-central-messages *ngIf="r == '/main/messages'"></app-main-central-messages> -->
+    <app-main-central-home *ngIf="actualComposant == 'home'"></app-main-central-home>
+    <app-main-central-friends *ngIf="actualComposant == 'friends'"></app-main-central-friends>
+    <app-main-central-events *ngIf="actualComposant == 'events'"></app-main-central-events>
+    <app-main-central-messages *ngIf="actualComposant == 'messages'"></app-main-central-messages>
   </div>
 </div>
 
