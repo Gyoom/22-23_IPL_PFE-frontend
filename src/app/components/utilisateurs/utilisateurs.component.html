@@ -9,12 +9,12 @@
 
     <p *ngIf="utilisateurs.prenom"> <!--cree la balise p avec le contenu si l'utilisateur a un prenom-->
         Pseudo: {{ utilisateurs.pseudo }}
+        <button mat-raised-button color="primary" type="button" (click)="ajouterAmi()">
+            ajouter ami
+        </button>
       </p>
 
-    <button type="button" (click)="ajouterAmi()">
-        ajouter ami
-    </button>
-    <br><br><br>
+    <br><br>
 </div>
 
 <!-- <div ng-init="newLink = 'http://educative.io'"> // a tester pour dynamic link angular
