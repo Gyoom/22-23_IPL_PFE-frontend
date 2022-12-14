@@ -51,18 +51,10 @@ export class UtilisateursComponent implements OnInit {
 
 
   userSorting() {
+    console.log(this.allUsers);
+    console.log(this.friends);
     this.allUsers = this.allUsers.filter(user => user["_fields"][0]["properties"]["username"] != this.tokenStorage.getUser().username);
-    this.friends.forEach(friend =>
-      {
-        this.allUsers.forEach(user=>
-          {
-            if (friend["_fields"][0] != user["_fields"][0]["properties"]["username"]) {
-              this.sortedUsers.push(user["_fields"][0]["properties"]);
-            }
-          }
-        )
-      }
-    );
+
   }
 
   ajouterAmi(username:string) {

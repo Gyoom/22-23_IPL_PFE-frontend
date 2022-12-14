@@ -35,7 +35,6 @@ export class MainRightEventsComponent implements OnInit {
   }
 
   filterEvents() {
-    console.log(this.registeredEvents);
     this.registeredEvents = this.registeredEvents.filter(event => new Date(event["_fields"][0]["properties"]["ending_date"]) > new Date()); // ok
     this.sortEvents();
   }
