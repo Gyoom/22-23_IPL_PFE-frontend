@@ -41,4 +41,10 @@ createOne(name: string, starting_date: Date, ending_date: Date, description: str
     }, this.httpOptions);
   }
 
+  register(username: string, id:string): Observable<any> {
+    return this.http.put(this.backUrl + '/events/' + id + '/participate', {
+      username
+    }, this.httpOptions);
+  }
+
 }

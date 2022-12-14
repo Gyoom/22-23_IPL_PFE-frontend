@@ -1,35 +1,22 @@
-<div>
+<section>
   <h2>Evenements</h2>
 
-  <div class="borderCSS" *ngFor="let event of events"> <!-- affiche tout les events -->
-
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>
-        <!-- TODO changer en route vers l'event selectionné -->
-          <a href="http://localhost:4200/main">
-            <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
-          </a>
-      </mat-card-title>
-        <mat-card-subtitle>
-          <!--*ngIf="events.type"--> <!--cree la balise p avec le contenu si l'event a un type -->
-          <p>type: <!--{{ events.type }} --> TODO ajouter type event</p>
-        </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="mySlides">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> <!-- TODO changer photo de l'event, et le alt -->
-        </div>
-
-        <p>
-            Description : {{ this.events[1]["_fields"][0]["properties"]["description"] }}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
+    <div class="card borderCSS m-1" *ngFor="let event of events">
+      <p class="right mt-3 me-3 mb-0">{{ event["_fields"][0]["properties"]["starting_date"] }} - {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+      <div class="mySlides m-4">
+        <div>
+          <h3>{{ event["_fields"][0]["properties"]["name"] }}</h3>
+      </div>
+      <div>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <p> {{  event["_fields"][0]["properties"]["description"] }}</p>
+        <p hidden #id>{{ event["_fields"][0]["properties"]["id"] }}</p>
+      </div>
+      <div>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-</div>
+        <button mat-button (click)="participate(id.innerHTML)">PARTICIPE</button>
+      </div>
+      </div>
+    </div>
+  </section>
