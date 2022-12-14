@@ -1,6 +1,7 @@
 <section class="borderCSS scroll tests m-1">
   <div data-bs-spy="scroll" data-bs-offset="0" tabindex="0">
     <h2>Events en cours</h2>
+    <p *ngIf="noEvents == 0"> Vous n'êtes inscrit à aucun evenement actuel ou à venir.</p>
     <div class="borderCSS m-1" *ngFor="let event of events">
         <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
         <p>Date de début : {{ event["_fields"][0]["properties"]["starting_date"] }}</p>
