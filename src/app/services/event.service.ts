@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
-import { User } from '../models/User';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -11,7 +10,7 @@ export class EventService {
 
 constructor(private http: HttpClient) { }
 
-private backUrl = 'http://localhost:4000'
+private backUrl = environment.apiURL;
 private getAllUrl = '/events/';
 private createOneUrl = '/events/create';
 

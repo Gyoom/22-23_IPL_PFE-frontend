@@ -33,9 +33,6 @@ export class MainRightEventsComponent implements OnInit {
              return 1;
           return 0;
         }); // ok
-
-       this.test = new Date().toUTCString();
-       console.log(this.test);
         this.noEvents = this.events.length
       },
       err => {
