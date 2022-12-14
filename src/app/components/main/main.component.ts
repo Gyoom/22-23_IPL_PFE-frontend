@@ -15,9 +15,13 @@ export class MainComponent implements OnInit {
     public router: Router
   ) { }
 
+  public username = 'Pseudo';
+
   ngOnInit() {
     if (!this.tokenStorage.getToken()) {
       this.router.navigate(['/login']);
+    } else {
+      this.username = this.tokenStorage.getUser().username;
     }
   }
 

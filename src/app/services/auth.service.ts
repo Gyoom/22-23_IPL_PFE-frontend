@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
 import { User } from '../models/User';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -11,15 +12,16 @@ export class AuthService {
 
 constructor(private http: HttpClient) { }
 
-private backUrl = 'http://localhost:4000'
+private backUrl = environment.apiURL;
 private loginUrl = '/auth/login';
 private registerUrl = '/auth/register';
 
 httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
 // Access-Control-Request-Headers
+
+
 // KO --> Back
 getUsers(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:4000/");

@@ -1,11 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .borderCSS {
     border: 2px solid ;
     border-radius: 10px;
     border-color: black;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.scroll {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-align: end;
+    height: 85vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

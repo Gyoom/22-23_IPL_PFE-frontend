@@ -1,11 +1,11 @@
-<section class="borderCSS m-1">
-  <h2>Events en cours</h2>
-  <div class="borderCSS m-1" *ngFor="let event of events">
-      <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
-      <p>Date de début : {{ event["_fields"][0]["properties"]["starting_date"] }}</p>
-      <p>Date de fin : {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
-      <p>description : {{ event["_fields"][0]["properties"]["description"] }}</p>
+<section class="borderCSS scroll tests m-1">
+  <div data-bs-spy="scroll" data-bs-offset="0" tabindex="0">
+    <h2>Events en cours</h2>
+    <div class="borderCSS m-1" *ngFor="let event of events">
+        <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
+        <p>Date de début : {{ event["_fields"][0]["properties"]["starting_date"] }}</p>
+        <p>Date de fin : {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+        <p>description : {{ event["_fields"][0]["properties"]["description"] }}</p>
+    </div>
   </div>
-  <button (click)="createEvent()">create</button>
-  <p>{{ error }}</p>
 </section>

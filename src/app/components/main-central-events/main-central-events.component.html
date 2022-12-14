@@ -1,30 +1,35 @@
-<h2>Evenements</h2> <br>
+<div>
+  <h2>Evenements</h2>
 
-<div *ngFor="let event of events"> <!-- affiche tout les events -->
+  <div class="borderCSS" *ngFor="let event of events"> <!-- affiche tout les events -->
 
     <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><a href="http://localhost:4200/main"> <!-- TODO changer en route vers l'event selectionné -->
-        <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
-    </a></mat-card-title>
-    <mat-card-subtitle><p> <!--*ngIf="events.type"--> <!--cree la balise p avec le contenu si l'event a un type -->
-        type: <!--{{ events.type }} --> TODO ajouter type event
-      </p></mat-card-subtitle>
-  </mat-card-header>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+        <!-- TODO changer en route vers l'event selectionné -->
+          <a href="http://localhost:4200/main">
+            <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
+          </a>
+      </mat-card-title>
+        <mat-card-subtitle>
+          <!--*ngIf="events.type"--> <!--cree la balise p avec le contenu si l'event a un type -->
+          <p>type: <!--{{ events.type }} --> TODO ajouter type event</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="mySlides">
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> <!-- TODO changer photo de l'event, et le alt -->
+        </div>
 
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> <!-- TODO changer photo de l'event, et le alt -->
-  <mat-card-content>
-    <p>
-        Description : {{ this.events[1]["_fields"][0]["properties"]["description"] }}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
-
-<br><br>
-
+        <p>
+            Description : {{ this.events[1]["_fields"][0]["properties"]["description"] }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
