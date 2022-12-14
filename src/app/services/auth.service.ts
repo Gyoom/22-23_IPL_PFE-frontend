@@ -20,15 +20,9 @@ httpOptions = {
   };
 // Access-Control-Request-Headers
 
-
-// KO --> Back
-getUsers(): Observable<User[]> {
-    return this.http.get<User[]>("http://localhost:4000/");
-}
-
 // ok
 login(username: string, password: string): Observable<any> {
-
+    console.log(this.backUrl);
     return this.http.post(this.backUrl + this.loginUrl, {
         username,
         password

@@ -3,9 +3,9 @@
 <section class="borderCSS scroll m-1">
     <div>
         <h2>Utilisateurs</h2>
-        <div class="borderCSS m-1" *ngFor="let user of users">
-            <h5>{{ user["_fields"][0]["properties"]["username"] }}</h5>
-            <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="ajouterAmi()">
+        <div class="borderCSS m-1" *ngFor="let user of sortedUsers">
+            <h5 #username id="phone_valid" >{{ user["username"] }}</h5>
+            <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="ajouterAmi(username.innerHTML)">
                 ajouter comme ami
             </button>
         </div>
