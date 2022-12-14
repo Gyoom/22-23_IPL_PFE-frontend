@@ -14,22 +14,19 @@ export class MainRightEventsComponent implements OnInit {
     private tokenStorage: TokenStorageService
   ) { }
 
-  public events: any[] = [];
   public registeredEvents: any[] = [];
-  public filteredEvents: any[] = [];
   public noEvents = 0;
   public error = '';
 
   ngOnInit() {
-    this.getAllEvents();
+    this.getRegisteredEvent();
   }
 
-  getAllEvents() {
-    this.eventService.getAll().subscribe(
+  getRegisteredEvent() {
+    this.eventService.getRegistered(this.tokenStorage.getUser().username).subscribe(
       data => {
-        this.events = data;
-        console.log(this.events);
-        this.getRegisteredEvent();
+        this.registeredEvents = data["records"];
+        this.filterEvents();
       },
       err => {
         this.error = err.error.message;
@@ -37,24 +34,20 @@ export class MainRightEventsComponent implements OnInit {
     );
   }
 
-  getRegisteredEvent() {
-    this.filterEvents();
-  }
-
   filterEvents() {
-    //this.events = this.events.filter(event => event["_fields"][0]["properties"]["username"] == this.tokenStorage.getUser().username); // ok
-    this.events = this.events.filter(event => new Date(event["_fields"][0]["properties"]["ending_date"]) > new Date()); // ok
+    console.log(this.registeredEvents);
+    this.registeredEvents = this.registeredEvents.filter(event => new Date(event["_fields"][0]["properties"]["ending_date"]) > new Date()); // ok
     this.sortEvents();
   }
 
   sortEvents() {
-    this.events = this.events.sort(function compare(a, b) {
+    this.registeredEvents = this.registeredEvents.sort(function compare(a, b) {
       if ( new Date(a["_fields"][0]["properties"]["starting_date"]) < new Date(b["_fields"][0]["properties"]["starting_date"]))
          return -1;
       if (new Date(a["_fields"][0]["properties"]["starting_date"]) > new Date(b["_fields"][0]["properties"]["starting_date"]) )
          return 1;
       return 0;
     }); // ok
-    this.noEvents = this.events.length
+    this.noEvents = this.registeredEvents.length
   }
 }

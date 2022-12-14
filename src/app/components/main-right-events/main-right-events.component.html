@@ -4,7 +4,7 @@
   </div>
   <div class="card-body scroll">
     <p *ngIf="noEvents == 0"> Vous n'êtes inscrit à aucun evenement actuel ou à venir.</p>
-    <div class="borderCSS mt-1" *ngFor="let event of events">
+    <div class="borderCSS mt-1" *ngFor="let event of registeredEvents">
         <h4>{{ event["_fields"][0]["properties"]["name"] }}</h4>
         <p>Date de début : {{ event["_fields"][0]["properties"]["starting_date"] }}</p>
         <p>Date de fin : {{ event["_fields"][0]["properties"]["ending_date"] }}</p>

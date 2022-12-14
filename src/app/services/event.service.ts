@@ -20,13 +20,13 @@ httpOptions = {
 // ok
 getAll(): Observable<any> {
 
-  return this.http.get(this.backUrl + this.getAllUrl);
+  return this.http.get(this.backUrl + '/events/');
   }
 
   // ok
-getRegistered(): Observable<any> {
+getRegistered(username:string): Observable<any> {
 
-  return this.http.get(this.backUrl + this.getAllUrl);
+  return this.http.get(this.backUrl + '/events/register/' + username);
 }
 
 
