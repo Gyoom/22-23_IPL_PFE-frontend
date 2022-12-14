@@ -28,7 +28,8 @@ export class MainRightEventsComponent implements OnInit {
     this.eventService.getAll().subscribe(
       data => {
         this.events = data;
-        this. getRegisteredEvent();
+        console.log(this.events);
+        this.getRegisteredEvent();
       },
       err => {
         this.error = err.error.message;
@@ -41,7 +42,7 @@ export class MainRightEventsComponent implements OnInit {
   }
 
   filterEvents() {
-    this.events = this.events.filter(event => event["_fields"][0]["properties"]["username"] == this.tokenStorage.getUser().username); // ok
+    //this.events = this.events.filter(event => event["_fields"][0]["properties"]["username"] == this.tokenStorage.getUser().username); // ok
     this.events = this.events.filter(event => new Date(event["_fields"][0]["properties"]["ending_date"]) > new Date()); // ok
     this.sortEvents();
   }

@@ -1,10 +1,12 @@
 
 
-<section class="borderCSS scroll m-1">
+<section class="card borderCSS heightMainPage m-1">
     <div>
         <h2>Utilisateurs</h2>
-        <div class="borderCSS m-1" *ngFor="let user of sortedUsers">
-            <h5 #username id="phone_valid" >{{ user["username"] }}</h5>
+    </div>
+    <div class="card-body scroll">
+        <div class="borderCSS mt-1" *ngFor="let user of sortedUsers">
+            <h2 #username id="phone_valid" >{{ user["username"] }}</h2>
             <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="ajouterAmi(username.innerHTML)">
                 ajouter comme ami
             </button>

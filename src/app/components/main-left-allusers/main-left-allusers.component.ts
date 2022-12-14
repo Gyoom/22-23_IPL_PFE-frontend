@@ -68,8 +68,7 @@ export class UtilisateursComponent implements OnInit {
   ajouterAmi(username:string) {
     this.userService.addFriend(this.tokenStorage.getUser().username, username).subscribe(
         data => {
-          this.router.navigate(['/main']);
-          window.alert('vous avez ajouté '+ username +' en tant qu\'ami !');
+          window.location.reload();
         },
         err => {
           this.error = err.error.message;

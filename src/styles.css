@@ -16,6 +16,9 @@ body {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-align: end;
+}
+
+.heightMainPage {
     height: 85vh;
 }
 

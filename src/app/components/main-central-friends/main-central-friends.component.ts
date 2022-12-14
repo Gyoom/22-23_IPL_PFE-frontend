@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-main-central-friends',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCentralFriendsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService : UserService,
+    private tokenStorage: TokenStorageService
+  ) { }
+;
+  public friends:any[] = [];
+  public error = '';
 
   ngOnInit() {
+    this.getAllFriends();
   }
 
+  getAllFriends() {
+    this.userService.getFriends(this.tokenStorage.getUser().username).subscribe(
+      data => {
+        this.friends = data;
+      },
+      err => {
+        this.error = err.error.message;
+      }
+    );
+  }
 }

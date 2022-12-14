@@ -23,6 +23,12 @@ getAll(): Observable<any> {
   return this.http.get(this.backUrl + this.getAllUrl);
   }
 
+  // ok
+getRegistered(): Observable<any> {
+
+  return this.http.get(this.backUrl + this.getAllUrl);
+}
+
 
 createOne(name: string, starting_date: Date, ending_date: Date, description: string, username: string): Observable<any> {
     return this.http.post(this.backUrl + this.createOneUrl, {
