@@ -22,12 +22,11 @@ export class MainCentralCreerEventComponent implements OnInit {
   ngOnInit() {
   }
 
-  creerEvent(name: string, starting_date: string, ending_date: string, description: string){
+  creerEvent(name: string, starting_date: string, ending_date: string, description: string, statut: string){
     this.errorMessage = '';
     this.isFormFailed = false;
 
     const username: string = this.tokenService.getUser().username;
-    const statut = "aa";
 
     if (name == "") {
       this.errorMessage += 'nom de l\'event à remplir';
@@ -44,18 +43,14 @@ export class MainCentralCreerEventComponent implements OnInit {
       data => {
         //this.tokenStorage.saveToken(data.accessToken);
         //this.tokenStorage.saveUser(data);
-
-        this.router.navigate(['/main']);
+        window.location.reload();
       },
       err => {
         this.errorMessage += err.error.message;
 
       }
     );
-  }
-
-  reloadPage(): void {
-    window.location.reload();
+    
   }
 
 }
