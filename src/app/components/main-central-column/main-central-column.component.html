@@ -18,10 +18,6 @@
         <a  *ngIf="actualComposant == 'creer-event'; else elseCreerEvent" class="nav-link active bg-secondary onglet" (click)="change('creer-event')">New Event</a>
         <ng-template #elseCreerEvent> <a class="nav-link ongletText" (click)="change('creer-event')">New Event</a></ng-template>
       </li>
-      <li class="nav-item">
-        <a  *ngIf="actualComposant == 'friends'; else elseFriends" class="nav-link active bg-secondary onglet ongletText" (click)="change('friends')">Amis</a>
-        <ng-template #elseFriends> <a class="nav-link ongletText" (click)="change('friends')">Amis</a></ng-template>
-      </li>
     </ul>
   </div>
   <div class="card-body scroll">
@@ -29,7 +25,6 @@
     <app-main-central-invites *ngIf="actualComposant == 'invites'"></app-main-central-invites>
     <app-main-central-myevents *ngIf="actualComposant == 'myevents'"></app-main-central-myevents>
     <app-main-central-creer-event *ngIf="actualComposant == 'creer-event'"></app-main-central-creer-event>
-    <app-main-central-friends *ngIf="actualComposant == 'friends'"></app-main-central-friends>
   </div>
 </div>
 

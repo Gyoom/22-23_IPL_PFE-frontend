@@ -1,20 +1,21 @@
 <section>
-  <h2>Vous avez été invité aux évenements suivants :</h2>
+  <h2>Vous avez été invité aux évenements privés suivants :</h2>
 
     <div class="card borderCSS m-1" *ngFor="let event of events">
-      <p class="right mt-3 me-3 mb-0">{{ event["_fields"][0]["properties"]["starting_date"] }} - {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+      <p class="right mt-3 me-3 mb-0"> {{ event["_fields"][0]["properties"]["creation_date"] }}</p>
       <div class="mySlides m-4">
         <div>
-          <h3>{{ event["_fields"][0]["properties"]["name"] }}</h3>
+          <h3>{{ event["_fields"][0]["properties"]["name"] }} ({{ event["_fields"][0]["properties"]["statut"] }})</h3>
       </div>
       <div>
           <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <p> {{  event["_fields"][0]["properties"]["description"] }}</p>
+        <p class="mt-3"> {{  event["_fields"][0]["properties"]["description"] }}</p>
+        <p>Se déroule du {{ event["_fields"][0]["properties"]["starting_date"] }} au {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
         <p hidden #id>{{ event["_fields"][0]["properties"]["id"] }}</p>
       </div>
       <div>
-        <button mat-button (click)="participate(id.innerHTML)">non merci</button>
-        <button mat-button (click)="participate(id.innerHTML)">Ok je rejoins</button>
+        <button mat-button (click)="accepte(id.innerHTML)">Ok je rejoins</button>
+        <button mat-button (click)="refuse(id.innerHTML)">non merci</button>
       </div>
       </div>
     </div>

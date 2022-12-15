@@ -39,16 +39,27 @@ export class MainCentralInvitesComponent implements OnInit {
 
   sortEvents() {
     this.events = this.events.sort(function compare(a, b) {
-      if ( new Date(a["_fields"][0]["properties"]["starting_date"]) < new Date(b["_fields"][0]["properties"]["starting_date"]))
+      if ( new Date(a["_fields"][0]["properties"]["creation_date"]) > new Date(b["_fields"][0]["properties"]["creation_date"]))
          return -1;
-      if (new Date(a["_fields"][0]["properties"]["starting_date"]) > new Date(b["_fields"][0]["properties"]["starting_date"]) )
+      if (new Date(a["_fields"][0]["properties"]["creation_date"]) < new Date(b["_fields"][0]["properties"]["creation_date"]) )
          return 1;
       return 0;
     });
   }
 
-  participate(id:string) {
-    this.eventService.register(this.tokenStorage.getUser().username, id).subscribe(
+  accepte(id:string) {
+    this.eventService.join(this.tokenStorage.getUser().username, id).subscribe(
+      data => {
+        window.location.reload();
+      },
+      err => {
+        this.error = err.error.message;
+      }
+    );
+  }
+
+  refuse(id:string) {
+    this.eventService.join(this.tokenStorage.getUser().username, id).subscribe(
       data => {
         window.location.reload();
       },

@@ -19,7 +19,7 @@ export class MainCentralEventsComponent implements OnInit {
   public events = [];
   public error = '';
   ngOnInit() {
-    this.eventService.getAll().subscribe(
+    this.eventService.getPublics().subscribe(
       data => {
         this.events = data;
         this.filterEvents();
@@ -46,7 +46,7 @@ export class MainCentralEventsComponent implements OnInit {
   }
 
   participate(id:string) {
-    this.eventService.register(this.tokenStorage.getUser().username, id).subscribe(
+    this.eventService.join(this.tokenStorage.getUser().username, id).subscribe(
       data => {
         window.location.reload();
       },

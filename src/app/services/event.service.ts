@@ -18,7 +18,7 @@ httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 // ok
-getAll(): Observable<any> {
+getPublics(): Observable<any> {
 
   return this.http.get(this.backUrl + '/events/');
   }
@@ -27,6 +27,10 @@ getAll(): Observable<any> {
 getRegistered(username:string): Observable<any> {
 
   return this.http.get(this.backUrl + '/events/register/' + username);
+}
+
+getPersonnals(username:string): Observable<any> {
+  return this.http.get(this.backUrl + '/users/' + username + '/organized');
 }
 
 getInvitations (username:string): Observable<any> {
@@ -46,10 +50,21 @@ createOne(name: string, starting_date: Date, ending_date: Date,  creation_date: 
     }, this.httpOptions);
   }
 
-  register(username: string, id:string): Observable<any> {
+  join(username: string, id:string): Observable<any> {
     return this.http.put(this.backUrl + '/events/' + id + '/participate', {
       username
     }, this.httpOptions);
+  }
+
+  invite (usernameInviting: string, usernameInvited: string, idEvent:string) {
+    return this.http.post(this.backUrl + '/invites/invit', {
+      usernameInviting,
+      usernameInvited,
+      idEvent
+    }, this.httpOptions);
+  }
+
+  refuseInvite (usernameInviting: string, usernameInvited: string, idEvent:string) {
   }
 
 }
