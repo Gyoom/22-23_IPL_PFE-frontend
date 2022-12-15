@@ -8,11 +8,11 @@
             <div class="borderCSS mt-1" *ngFor="let user of sortedUsers">
                 <h2 #username id="phone_valid" >{{ user.username }}</h2>
                 <button *ngIf="user.friend == false; else elseButton" mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="ajouterAmi(username.innerHTML)">
-                  add as friends
+                  add as friend
                 </button>
                 <ng-template #elseButton>
 
-                  <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="supprimerAmi(username.innerHTML)">remote friend</button>
+                  <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="supprimerAmi(username.innerHTML)">remove friend</button>
 
                 </ng-template>
             </div>
