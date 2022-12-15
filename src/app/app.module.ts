@@ -18,7 +18,6 @@ import { MainCentralColumnComponent } from './components/main-central-column/mai
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
-import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';;
 import { MainCentralCreerEventComponent } from './components/main-central-creer-event/main-central-creer-event.component';
 import { MainCentralInvitesComponent } from './components/main-central-invites/main-central-invites.component';
 import { MainCentralMyEventsComponent } from './components/main-central-myEvents/main-central-myEvents.component';
@@ -37,7 +36,6 @@ import { MainCentralMyEventsComponent } from './components/main-central-myEvents
     MainCentralEventsComponent,
     ProfilUtilisateurComponent,
     MainRightEventsComponent,
-    MainCentralFriendsComponent,
     MainCentralCreerEventComponent,
     MainCentralInvitesComponent,
     MainCentralMyEventsComponent

@@ -56,6 +56,12 @@ createOne(name: string, starting_date: Date, ending_date: Date,  creation_date: 
     }, this.httpOptions);
   }
 
+  unJoin(username: string, id:string): Observable<any> {
+    return this.http.put(this.backUrl + '/events/' + id + '/unparticipate', {
+      username
+    }, this.httpOptions);
+  }
+
   invite (usernameInviting: string, usernameInvited: string, idEvent:string) {
     return this.http.post(this.backUrl + '/invites/invit', {
       usernameInviting,
@@ -63,8 +69,4 @@ createOne(name: string, starting_date: Date, ending_date: Date,  creation_date: 
       idEvent
     }, this.httpOptions);
   }
-
-  refuseInvite (usernameInviting: string, usernameInvited: string, idEvent:string) {
-  }
-
 }

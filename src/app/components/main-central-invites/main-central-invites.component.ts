@@ -59,7 +59,7 @@ export class MainCentralInvitesComponent implements OnInit {
   }
 
   refuse(id:string) {
-    this.eventService.join(this.tokenStorage.getUser().username, id).subscribe(
+    this.eventService.unJoin(this.tokenStorage.getUser().username, id).subscribe(
       data => {
         window.location.reload();
       },

@@ -2,15 +2,16 @@
   <h2>Evenements Personnels</h2>
 
     <div class="card borderCSS m-1" *ngFor="let event of events">
-      <p class="right mt-3 me-3 mb-0"> {{ event["_fields"][0]["properties"]["creation_date"] }}</p>
-      <div class="mySlides m-4">
+      <div class="mySlides m-3">
+        <p class="right me-1 mb-0"> {{ event["_fields"][0]["properties"]["creation_date"] }}</p>
         <div>
-          <h3>{{ event["_fields"][0]["properties"]["name"] }} ({{ event["_fields"][0]["properties"]["statut"] }})</h3>
+          <h3 class="p-0 m-0 eventTitle">{{ event["_fields"][0]["properties"]["name"] }} </h3>
+          <p class="ps-4 m-1">-- Event {{ event["_fields"][0]["properties"]["statut"] }} organisé par {{ event["_fields"][0]["properties"]["username"] }}</p>
       </div>
       <div>
           <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <p class="mt-3"> {{  event["_fields"][0]["properties"]["description"] }}</p>
-        <p>Se déroule du {{ event["_fields"][0]["properties"]["starting_date"] }} au {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+        <p class="ps-2 m-1">-- Se déroule du {{ event["_fields"][0]["properties"]["starting_date"] }} au {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
         <p hidden #id>{{ event["_fields"][0]["properties"]["id"] }}</p>
       </div>
       <div>
