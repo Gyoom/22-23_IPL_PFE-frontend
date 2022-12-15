@@ -38,4 +38,12 @@ export class UserService {
         usernameReciever
       }, this.httpOptions);
   }
+
+  deleteFriend(usernameSender: string, usernameReciever: string): Observable<any> {
+
+    return this.http.delete(this.backUrl + '/removeFriends', {
+      ...this.httpOptions, 
+      body: { usernameSender, usernameReciever } 
+    })
+  }
 }

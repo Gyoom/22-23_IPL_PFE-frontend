@@ -11,9 +11,9 @@
                   add as friends
                 </button>
                 <ng-template #elseButton>
-                    <p class="borderCSS m-1" type="text">
-                      is your friend
-                    </p>
+
+                  <button mat-raised-button color="primary" class="borderCSS m-1" type="button" (click)="supprimerAmi(username.innerHTML)">remote friend</button>
+
                 </ng-template>
             </div>
         </div>

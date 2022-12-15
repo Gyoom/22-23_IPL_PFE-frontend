@@ -16,6 +16,7 @@ export class MainCentralInvitesComponent implements OnInit {
 
   public events = [];
   public error = '';
+  public noEvents = 0;
   ngOnInit() {
       this.getInvitations();
   }
@@ -45,6 +46,8 @@ export class MainCentralInvitesComponent implements OnInit {
          return 1;
       return 0;
     });
+
+    this.noEvents = this.events.length
   }
 
   accepte(id:string) {

@@ -1,6 +1,6 @@
 <section>
   <h2>You have been invited to the following private events :</h2>
-
+  <p *ngIf="noEvents == 0" class="center">You are not currently invited to any events.</p>
     <div class="card borderCSS m-1" *ngFor="let event of events">
       <div class="mySlides m-3">
         <p class="right me-1 mb-0">Create the {{ formatDateTime(event["_fields"][0]["properties"]["creation_date"]) }}</p>
