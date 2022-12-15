@@ -21,6 +21,7 @@ import { MainRightEventsComponent } from './components/main-right-events/main-ri
 import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';;
 import { MainCentralCreerEventComponent } from './components/main-central-creer-event/main-central-creer-event.component';
 import { MainCentralInvitesComponent } from './components/main-central-invites/main-central-invites.component';
+import { MainCentralMyEventsComponent } from './components/main-central-myEvents/main-central-myEvents.component';
 
 
 // Component Manager
@@ -38,7 +39,8 @@ import { MainCentralInvitesComponent } from './components/main-central-invites/m
     MainRightEventsComponent,
     MainCentralFriendsComponent,
     MainCentralCreerEventComponent,
-    MainCentralInvitesComponent
+    MainCentralInvitesComponent,
+    MainCentralMyEventsComponent
   ],
   imports: [
     BrowserModule, // Browser link

@@ -29,6 +29,10 @@ getRegistered(username:string): Observable<any> {
   return this.http.get(this.backUrl + '/events/register/' + username);
 }
 
+getInvitations (username:string): Observable<any> {
+  return this.http.get(this.backUrl + '/invites/' + username + '/invited');
+}
+
 
 createOne(name: string, starting_date: Date, ending_date: Date, description: string, username: string): Observable<any> {
     return this.http.post(this.backUrl + this.createOneUrl, {

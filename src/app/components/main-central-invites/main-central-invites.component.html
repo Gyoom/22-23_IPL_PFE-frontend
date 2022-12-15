@@ -1,3 +1,21 @@
-<p>
-  main-central-invites works!
-</p>
+<section>
+  <h2>Vous avez été invité aux évenements suivants :</h2>
+
+    <div class="card borderCSS m-1" *ngFor="let event of events">
+      <p class="right mt-3 me-3 mb-0">{{ event["_fields"][0]["properties"]["starting_date"] }} - {{ event["_fields"][0]["properties"]["ending_date"] }}</p>
+      <div class="mySlides m-4">
+        <div>
+          <h3>{{ event["_fields"][0]["properties"]["name"] }}</h3>
+      </div>
+      <div>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <p> {{  event["_fields"][0]["properties"]["description"] }}</p>
+        <p hidden #id>{{ event["_fields"][0]["properties"]["id"] }}</p>
+      </div>
+      <div>
+        <button mat-button (click)="participate(id.innerHTML)">non merci</button>
+        <button mat-button (click)="participate(id.innerHTML)">Ok je rejoins</button>
+      </div>
+      </div>
+    </div>
+  </section>
