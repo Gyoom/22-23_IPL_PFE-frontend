@@ -1,0 +1,28 @@
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .mySlides img {
+    max-width: 100%;
+    min-width: 100%;
+    display: block;
+  }
+
+  .width {
+    width: 100%;
+  }
+
+  .headerEvent {
+    display: inline;
+  }
+
+  .right {
+    text-align: right;
+
+  }

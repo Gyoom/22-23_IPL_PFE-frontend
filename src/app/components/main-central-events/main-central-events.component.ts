@@ -37,9 +37,9 @@ export class MainCentralEventsComponent implements OnInit {
 
   sortEvents() {
     this.events = this.events.sort(function compare(a, b) {
-      if ( new Date(a["_fields"][0]["properties"]["starting_date"]) < new Date(b["_fields"][0]["properties"]["starting_date"]))
+      if ( new Date(a["_fields"][0]["properties"]["creation_date"]) > new Date(b["_fields"][0]["properties"]["creation_date"]))
          return -1;
-      if (new Date(a["_fields"][0]["properties"]["starting_date"]) > new Date(b["_fields"][0]["properties"]["starting_date"]) )
+      if (new Date(a["_fields"][0]["properties"]["creation_date"]) < new Date(b["_fields"][0]["properties"]["creation_date"]) )
          return 1;
       return 0;
     });
