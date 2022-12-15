@@ -1,4 +1,15 @@
+.navbar {
+    color:  white;
+}
 
+.navbar div a{
+    color:  white;
+}
+
+.navbar div form button{
+    color:  red;
+    border-color: red;
+}
 .container-main {
     margin: 20px;
     display: flex;

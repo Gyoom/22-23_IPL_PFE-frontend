@@ -18,7 +18,7 @@ export class UtilisateursComponent implements OnInit {
 
   private allUsers:any[] = [];
   public sortedUsers:any[] = [];
-  public friends:any[] = [];
+  public allButFriends:any[] = [];
   public error = '';
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class UtilisateursComponent implements OnInit {
     this.userService.getAll().subscribe(
       data => {
         this.allUsers = data;
-        this.getFriends();
+        this.getAllButFriends();
       },
       err => {
         this.error = err.error.message;
@@ -37,10 +37,10 @@ export class UtilisateursComponent implements OnInit {
     );
   }
 
-  getFriends() {
-    this.userService.getFriends(this.tokenStorage.getUser().username).subscribe(
+  getAllButFriends() {
+    this.userService.getAllButFriends(this.tokenStorage.getUser().username).subscribe(
       data => {
-        this.friends = data;
+        this.allButFriends = data;
         this.userSorting();
       },
       err => {
@@ -51,10 +51,35 @@ export class UtilisateursComponent implements OnInit {
 
 
   userSorting() {
-    console.log(this.allUsers);
-    console.log(this.friends);
+    const a: any[] = [];
+    const b: any[] = [];
     this.allUsers = this.allUsers.filter(user => user["_fields"][0]["properties"]["username"] != this.tokenStorage.getUser().username);
 
+    this.allUsers.forEach(user =>
+        a.push(user["_fields"][0]["properties"]["username"])
+    )
+    this.allButFriends.forEach(user =>
+      b.push(user["_fields"][0])
+    )
+    a.forEach(a1 =>
+      {
+        if (b.includes(a1)) {
+          this.sortedUsers.push(
+            {
+              username: a1,
+              friend: false
+            }
+          )
+        } else {
+          this.sortedUsers.push(
+            {
+              username: a1,
+              friend: true
+            }
+          )
+        }
+      }
+    )
   }
 
   ajouterAmi(username:string) {

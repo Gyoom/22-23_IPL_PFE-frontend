@@ -26,6 +26,10 @@ export class UserService {
     return this.http.get(this.backUrl + '/friends/' +  username);
   }
 
+  getAllButFriends(username:string): Observable<any> {
+    return this.http.get(this.backUrl + '/nonfriends/' +  username);
+  }
+
   // ok
   addFriend(usernameSender: string, usernameReciever: string): Observable<any> {
 

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainCentralColumnComponent implements OnInit {
 
   constructor() { }
-  public actualComposant = 'home';
+  public actualComposant = 'events';
 
   ngOnInit() {
   }
