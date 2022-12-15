@@ -34,13 +34,14 @@ getInvitations (username:string): Observable<any> {
 }
 
 
-createOne(name: string, starting_date: Date, ending_date: Date, description: string, username: string): Observable<any> {
+createOne(name: string, starting_date: Date, ending_date: Date, description: string, username: string, statut: string): Observable<any> {
     return this.http.post(this.backUrl + this.createOneUrl, {
       name,
       starting_date,
       ending_date,
       description,
-      username
+      username,
+      statut
     }, this.httpOptions);
   }
 

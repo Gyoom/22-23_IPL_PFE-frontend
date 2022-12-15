@@ -3,25 +3,40 @@
 <div>
     <form>
         <div class="form-outline form-white mb-4">
-            <input type="name" id="typeNameX"l class="form-control form-control-lg" />
-            <label class="form-label" for="typeNameX">Nom de l'évenement</label>
+            <input type="name" name="name" id="name" #name class="form-control form-control-lg" />
+            <label class="form-label" for="name">Nom de l'évenement</label>
         </div>
 
         <div class="form-outline form-white mb-4">
-            <input type="dateDebut" id="typeDateDebut" class="form-control form-control-lg" />
-            <label class="form-label" for="typeDateDebut">Date de debut</label>
+            <input type="date" name="starting_date" id="starting_date" #starting_date value="2022-12-14" min="2022-12-14" max="2200-12-14" class="form-control form-control-lg" />
+            <label class="form-label" for="starting_date">Date de debut</label>
         </div>
 
         <div class="form-outline form-white mb-4">
-            <input type="dateFin" id="typeDateFin" class="form-control form-control-lg" />
-            <label class="form-label" for="typeDateFin">Date de fin</label>
+            <input type="date" name="ending_date" id="ending_date" #ending_date value="2022-12-14" min="2022-12-14" max="2200-12-14" class="form-control form-control-lg" />
+            <label class="form-label" for="ending_date">Date de fin</label>
         </div>
 
         <div class="form-outline form-white mb-4">
-            <input type="description" id="typeDescription" class="form-control form-control-lg" />
-            <label class="form-label" for="typeDescription">Description</label>
+            <input type="description" name="description" #description id="description" class="form-control form-control-lg" />
+            <label class="form-label" for="description">Description</label>
         </div>
 
-        <!--<button class="btn btn-outline-light btn-lg px-5" (click)="creerEvent()">Creer Evenement</button> -->
+        l'évemement est-il public ou private ? :
+        <fieldset>
+            <div>
+
+                <input type="radio" id="public" name="statut" value="public" #statut checked>
+                <label for="public">public</label>
+            </div>
+            <div>
+                <input type="radio" id="private" name="statut" value="private" #statut>
+                <label for="private">private</label>
+            </div>
+        </fieldset>
+
+        <br>
+        
+        <button class="btn btn-outline-dark btn-lg px-5" (click)="creerEvent(name.value, starting_date.value, ending_date.value, description.value, statut.value)">Creer Evenement</button>
     </form>
 </div>
