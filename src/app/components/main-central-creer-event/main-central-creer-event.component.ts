@@ -22,7 +22,7 @@ export class MainCentralCreerEventComponent implements OnInit {
   ngOnInit() {
   }
 
-  creerEvent(name: string, starting_date: string, ending_date: string, description: string, statut: string){
+  creerEvent(name: string, starting_date: string, ending_date: string, description: string, statut: string, category:string){
     this.errorMessage = '';
     this.isFormFailed = false;
 
@@ -32,14 +32,14 @@ export class MainCentralCreerEventComponent implements OnInit {
       this.errorMessage += 'nom de l\'event à remplir';
       this.isFormFailed = true;
     }
-    if (description = "") {
+    if (description == "") {
       this.errorMessage += 'description a replir\n';
       this.isFormFailed = true;
     }
     if (this.isFormFailed) return;
 
 
-    this.eventService.createOne(name, new Date (starting_date), new Date (ending_date), new Date(), description, username, statut).subscribe(
+    this.eventService.createOne(name, new Date (starting_date), new Date (ending_date), new Date(), description, username, statut, category).subscribe(
       data => {
         //this.tokenStorage.saveToken(data.accessToken);
         //this.tokenStorage.saveUser(data);
@@ -50,7 +50,5 @@ export class MainCentralCreerEventComponent implements OnInit {
 
       }
     );
-
   }
-
 }

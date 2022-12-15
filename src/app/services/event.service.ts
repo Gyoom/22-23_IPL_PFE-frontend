@@ -11,7 +11,6 @@ export class EventService {
 constructor(private http: HttpClient) { }
 
 private backUrl = environment.apiURL;
-private getAllUrl = '/events/';
 private createOneUrl = '/events/create';
 
 httpOptions = {
@@ -23,39 +22,39 @@ getPublics(): Observable<any> {
   return this.http.get(this.backUrl + '/events/');
   }
 
-  // ok
+// ok
 getRegistered(username:string): Observable<any> {
 
   return this.http.get(this.backUrl + '/events/register/' + username);
 }
-
+// ok
 getPersonnals(username:string): Observable<any> {
   return this.http.get(this.backUrl + '/users/' + username + '/organized');
 }
-
+// ok
 getInvitations (username:string): Observable<any> {
   return this.http.get(this.backUrl + '/invites/' + username + '/invited');
 }
 
-
-createOne(name: string, starting_date: Date, ending_date: Date,  creation_date: Date, description: string, username: string, statut: string): Observable<any> {
-    return this.http.post(this.backUrl + this.createOneUrl, {
+createOne(name: string, starting_date: Date, ending_date: Date,  creation_date: Date, description: string, username: string, statut: string, category:string): Observable<any> {
+  return this.http.post(this.backUrl + this.createOneUrl, {
       name,
       starting_date,
       ending_date,
       creation_date,
       description,
       username,
-      statut
+      statut,
+      category
     }, this.httpOptions);
   }
-
+  // ok
   join(username: string, id:string): Observable<any> {
     return this.http.put(this.backUrl + '/events/' + id + '/participate', {
       username
     }, this.httpOptions);
   }
-
+  // ok
   unJoin(username: string, id:string): Observable<any> {
     return this.http.put(this.backUrl + '/events/' + id + '/unparticipate', {
       username

@@ -56,4 +56,12 @@ export class MainCentralEventsComponent implements OnInit {
     );
   }
 
+  formatDate (date:string):string {
+    return date.substring(8, 10) + '-' + date.substring(5, 7) + '-' + date.substring(0, 4);
+  }
+
+  formatDateTime (date:string):string {
+    return date.substring(8, 10) + '-' + date.substring(5, 7) + '-' + date.substring(0, 4) + ' à ' + date.substring(11, 13) + 'h' + date.substring(14, 16);
+  }
+
 }

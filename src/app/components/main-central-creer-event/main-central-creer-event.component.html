@@ -21,22 +21,26 @@
             <input type="description" name="description" #description id="description" class="form-control form-control-lg" />
             <label class="form-label" for="description">Description</label>
         </div>
-
-        l'évemement est-il public ou private ? :
-        <fieldset>
-            <div>
-
-                <input type="radio" id="public" name="statut" value="public" #statut checked>
-                <label for="public">public</label>
-            </div>
-            <div>
-                <input type="radio" id="private" name="statut" value="private" #statut>
-                <label for="private">private</label>
-            </div>
-        </fieldset>
-
-        <br>
-        
-        <button class="btn btn-outline-dark btn-lg px-5" (click)="creerEvent(name.value, starting_date.value, ending_date.value, description.value, statut.value)">Creer Evenement</button>
+        <div class="form-outline form-white mb-4">
+          <select #statut>
+            <option value="public">Publique</option>
+            <option value="private">Privé</option>
+          </select><br>
+          <label class="form-label" for="description">Type de l'evenement</label>
+        </div>
+        <div class="form-outline form-white mb-4">
+          <select #category>
+            <option value="Festival">Festival</option>
+            <option value="Light_Walk">Marche</option>
+            <option value="Wedding">Marriage</option>
+            <option value="Private_Party">Fête privée</option>
+          </select><br>
+          <label class="form-label" for="description">Categorie de l'evenement</label>
+        </div>
+        <div>
+          <button class="btn btn-outline-dark btn-lg px-5" (click)="creerEvent(name.value, starting_date.value, ending_date.value, description.value, statut.value, category.value)">
+            Créer l'évenement
+          </button>
+        </div>
     </form>
 </div>
