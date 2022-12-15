@@ -49,4 +49,9 @@ export class MainRightEventsComponent implements OnInit {
     }); // ok
     this.noEvents = this.registeredEvents.length
   }
+
+  formatDate (date:string):string {
+    return date.substring(8, 10) + '-' + date.substring(5, 7) + '-' + date.substring(0, 4);
+  }
+
 }

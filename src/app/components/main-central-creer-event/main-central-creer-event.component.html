@@ -4,17 +4,17 @@
     <form>
         <div class="form-outline form-white mb-4">
             <input type="name" name="name" id="name" #name class="form-control form-control-lg" />
-            <label class="form-label" for="name">Nom de l'évenement</label>
+            <label class="form-label" for="name">Event name</label>
         </div>
 
         <div class="form-outline form-white mb-4">
             <input type="date" name="starting_date" id="starting_date" #starting_date value="2022-12-14" min="2022-12-14" max="2200-12-14" class="form-control form-control-lg" />
-            <label class="form-label" for="starting_date">Date de debut</label>
+            <label class="form-label" for="starting_date">Start date</label>
         </div>
 
         <div class="form-outline form-white mb-4">
             <input type="date" name="ending_date" id="ending_date" #ending_date value="2022-12-14" min="2022-12-14" max="2200-12-14" class="form-control form-control-lg" />
-            <label class="form-label" for="ending_date">Date de fin</label>
+            <label class="form-label" for="ending_date">End date</label>
         </div>
 
         <div class="form-outline form-white mb-4">
@@ -23,23 +23,23 @@
         </div>
         <div class="form-outline form-white mb-4">
           <select #statut>
-            <option value="public">Publique</option>
-            <option value="private">Privé</option>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
           </select><br>
-          <label class="form-label" for="description">Type de l'evenement</label>
+          <label class="form-label" for="description">Type of event</label>
         </div>
         <div class="form-outline form-white mb-4">
           <select #category>
             <option value="Festival">Festival</option>
-            <option value="Light_Walk">Marche</option>
-            <option value="Wedding">Marriage</option>
-            <option value="Private_Party">Fête privée</option>
+            <option value="Light_Walk">Walk</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Private_Party">Private party</option>
           </select><br>
-          <label class="form-label" for="description">Categorie de l'evenement</label>
+          <label class="form-label" for="description">Event Category</label>
         </div>
         <div>
           <button class="btn btn-outline-dark btn-lg px-5" (click)="creerEvent(name.value, starting_date.value, ending_date.value, description.value, statut.value, category.value)">
-            Créer l'évenement
+            Create the event
           </button>
         </div>
     </form>
