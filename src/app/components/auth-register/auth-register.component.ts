@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  register (username: string, password: string, passwordConfirm: string, email: string) {
+  register (username: string, prenom: string, nom: string, password: string, passwordConfirm: string, email: string){
     this.errorMessage = '';
     this.isRegisterFailed = false;
     if (username == "") {
@@ -47,10 +47,18 @@ export class RegisterComponent implements OnInit {
       this.errorMessage += 'passwords différents\n';
       this.isRegisterFailed = true;
     }
+    if (prenom == "") {
+      this.errorMessage += 'email à remplir\n';
+      this.isRegisterFailed = true;
+    }
+    if (nom == "") {
+      this.errorMessage += 'email à remplir\n';
+      this.isRegisterFailed = true;
+    }
     if (this.isRegisterFailed) return;
 
 
-    this.authService.register(username, password, email).subscribe(
+    this.authService.register(username, password, email, prenom, nom).subscribe(
       data => {
         //this.tokenStorage.saveToken(data.accessToken);
         //this.tokenStorage.saveUser(data);

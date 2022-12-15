@@ -92,4 +92,15 @@ export class UtilisateursComponent implements OnInit {
         }
     );
   }
+
+  supprimerAmi(username:string) {
+    this.userService.deleteFriend(this.tokenStorage.getUser().username, username).subscribe(
+        data => {
+          window.location.reload();
+        },
+        err => {
+          this.error = err.error.message;
+        }
+    );
+  }
 }

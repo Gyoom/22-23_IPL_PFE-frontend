@@ -30,11 +30,13 @@ login(username: string, password: string): Observable<any> {
   }
 
   // ok
-  register(username: string, password: string, email: string): Observable<any> {
+  register(username: string, password: string, email: string, firstname: string, name: string): Observable<any> {
     return this.http.post(this.backUrl + this.registerUrl, {
       username,
       email,
-      password
+      password,
+      firstname,
+      name
     }, this.httpOptions);
   }
 

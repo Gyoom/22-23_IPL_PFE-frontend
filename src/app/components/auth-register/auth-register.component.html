@@ -20,6 +20,16 @@
                     </div>
 
                     <div class="form-outline form-white mb-4">
+                      <input type="text" id="typeTextX"  #prenom class="form-control form-control-lg" />
+                      <label class="form-label" for="typeTextX">Prenom</label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="typeTextX"  #nom class="form-control form-control-lg" />
+                      <label class="form-label" for="typeTextX">Nom</label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
                         <input type="password" id="typePassword1"  #password class="form-control form-control-lg" />
                         <label class="form-label" for="typePassword1">Password</label>
                     </div>
@@ -29,7 +39,7 @@
                         <label class="form-label" for="typePassword2">Confirm password</label>
                     </div>
 
-                    <button class="btn btn-outline-light btn-lg px-5" (click)="register(username.value, password.value, passwordConfirm.value, email.value)">Register</button>
+                    <button class="btn btn-outline-light btn-lg px-5" (click)="register(username.value, prenom.value, nom.value, password.value, passwordConfirm.value, email.value)">Register</button>
                 </form>
               </div>
 
