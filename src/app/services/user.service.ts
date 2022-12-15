@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  private backUrl = environment.apiURL + '/users';
+  private backUrl = 'https://backend-nestjs-prod.azurewebsites.net' + '/users';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -42,8 +42,8 @@ export class UserService {
   deleteFriend(usernameSender: string, usernameReciever: string): Observable<any> {
 
     return this.http.delete(this.backUrl + '/removeFriends', {
-      ...this.httpOptions, 
-      body: { usernameSender, usernameReciever } 
+      ...this.httpOptions,
+      body: { usernameSender, usernameReciever }
     })
   }
 }

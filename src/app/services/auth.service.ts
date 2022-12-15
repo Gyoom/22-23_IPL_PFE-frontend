@@ -11,7 +11,7 @@ export class AuthService {
 
 constructor(private http: HttpClient) { }
 
-private backUrl = environment.apiURL;
+private backUrl = 'https://backend-nestjs-prod.azurewebsites.net';
 private loginUrl = '/auth/login';
 private registerUrl = '/auth/register';
 
