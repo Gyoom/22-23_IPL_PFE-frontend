@@ -15,13 +15,12 @@ import { UtilisateursComponent } from './components/main-left-allusers/main-left
 import { PageNoFoundComponent } from './components/PageNoFound/PageNoFound.component';
 import { MainComponent } from './components/main/main.component';
 import { MainCentralColumnComponent } from './components/main-central-column/main-central-column.component';
-import { MainCentralHomeComponent } from './components/main-central-home/main-central-home.component';
 import { MainCentralEventsComponent } from './components/main-central-events/main-central-events.component';
 import { ProfilUtilisateurComponent } from './components/profil-utilisateur/profil-utilisateur.component';
 import { MainRightEventsComponent } from './components/main-right-events/main-right-events.component';
-import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';
-import { MainCentralMessagesComponent } from './components/main-central-messages/main-central-messages.component';
+import { MainCentralFriendsComponent } from './components/main-central-friends/main-central-friends.component';;
 import { MainCentralCreerEventComponent } from './components/main-central-creer-event/main-central-creer-event.component';
+import { MainCentralInvitesComponent } from './components/main-central-invites/main-central-invites.component';
 
 
 // Component Manager
@@ -34,13 +33,12 @@ import { MainCentralCreerEventComponent } from './components/main-central-creer-
     PageNoFoundComponent,
     MainComponent,
     MainCentralColumnComponent,
-    MainCentralHomeComponent,
     MainCentralEventsComponent,
     ProfilUtilisateurComponent,
     MainRightEventsComponent,
     MainCentralFriendsComponent,
-    MainCentralMessagesComponent,
     MainCentralCreerEventComponent,
+    MainCentralInvitesComponent
   ],
   imports: [
     BrowserModule, // Browser link

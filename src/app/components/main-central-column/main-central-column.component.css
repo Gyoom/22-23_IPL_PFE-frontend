@@ -1,8 +1,22 @@
-.example-card {
-    max-width: 400px;
-  }
+
 
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+
+  .onglet {
+    padding-bottom: 24px;
+    font-size: 20px;
+  }
+  a:hover {
+    padding-bottom: 24px;
+    font-size: 20px;
+    color: whitesmoke;
+  }
+
+  .ongletText {
+    color: whitesmoke;
+    font-size: 20px;
+  }
+

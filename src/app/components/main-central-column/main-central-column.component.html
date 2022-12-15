@@ -1,35 +1,30 @@
 
 <div class="card borderCSS heightMainPage m-1">
-  <div class="card-header">
+  <div class="card-header bg-dark">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a  *ngIf="actualComposant == 'home'; else elseHome" class="nav-link active" (click)="change('home')">Home</a>
-        <ng-template #elseHome> <a class="nav-link" (click)="change('home')">Home</a></ng-template>
+        <a  *ngIf="actualComposant == 'events'; else elseEvents" class="nav-link active bg-secondary onglet ongletText"  (click)="change('events')">Events</a>
+        <ng-template #elseEvents> <a class="nav-link ongletText" (click)="change('events')">Events</a></ng-template>
       </li>
       <li class="nav-item">
-        <a  *ngIf="actualComposant == 'friends'; else elseFriends" class="nav-link active" (click)="change('friends')">Amis</a>
-        <ng-template #elseFriends> <a class="nav-link" (click)="change('friends')">Amis</a></ng-template>
+        <a  *ngIf="actualComposant == 'invites'; else elseInvites" class="nav-link active bg-secondary onglet ongletText"  (click)="change('invites')">Invitations</a>
+        <ng-template #elseInvites> <a class="nav-link ongletText" (click)="change('invites')">Invitations</a></ng-template>
       </li>
       <li class="nav-item">
-        <a  *ngIf="actualComposant == 'events'; else elseEvents" class="nav-link active"  (click)="change('events')">Events</a>
-        <ng-template #elseEvents> <a class="nav-link" (click)="change('events')">Events</a></ng-template>
+        <a  *ngIf="actualComposant == 'creer-event'; else elseCreerEvent" class="nav-link active bg-secondary onglet" (click)="change('creer-event')">New Event</a>
+        <ng-template #elseCreerEvent> <a class="nav-link ongletText" (click)="change('creer-event')">New Event</a></ng-template>
       </li>
       <li class="nav-item">
-        <a  *ngIf="actualComposant == 'messages'; else elseMessages" class="nav-link active" (click)="change('messages')">Messages</a>
-        <ng-template #elseMessages> <a class="nav-link" (click)="change('messages')">Messages</a></ng-template>
-      </li>
-      <li class="nav-item">
-        <a  *ngIf="actualComposant == 'creer-event'; else elseCreerEvent" class="nav-link active" (click)="change('creer-event')">Creer un Evenement</a>
-        <ng-template #elseCreerEvent> <a class="nav-link" (click)="change('creer-event')">New Event</a></ng-template>
+        <a  *ngIf="actualComposant == 'friends'; else elseFriends" class="nav-link active bg-secondary onglet ongletText" (click)="change('friends')">Amis</a>
+        <ng-template #elseFriends> <a class="nav-link ongletText" (click)="change('friends')">Amis</a></ng-template>
       </li>
     </ul>
   </div>
   <div class="card-body scroll">
-    <app-main-central-home *ngIf="actualComposant == 'home'"></app-main-central-home>
-    <app-main-central-friends *ngIf="actualComposant == 'friends'"></app-main-central-friends>
     <app-main-central-events *ngIf="actualComposant == 'events'"></app-main-central-events>
-    <app-main-central-messages *ngIf="actualComposant == 'messages'"></app-main-central-messages>
+    <app-main-central-invites *ngIf="actualComposant == 'invites'"></app-main-central-invites>
     <app-main-central-creer-event *ngIf="actualComposant == 'creer-event'"></app-main-central-creer-event>
+    <app-main-central-friends *ngIf="actualComposant == 'friends'"></app-main-central-friends>
   </div>
 </div>
 
